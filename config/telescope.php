@@ -66,6 +66,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Telescope Email On Exception
+    |--------------------------------------------------------------------------
+    |
+    | This option should be used when we want to send emails to users on exception. 
+    |
+    */
+
+    'email_on_exception' => env('TELESCOPE_EMAIL_ON_EXCEPTION', true),
+
+    /*
+    |--------------------------------------------------------------------------
     | Telescope Route Middleware
     |--------------------------------------------------------------------------
     |

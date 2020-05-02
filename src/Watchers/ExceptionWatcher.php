@@ -80,4 +80,15 @@ class ExceptionWatcher extends Watcher
         return ! isset($event->context['exception']) ||
             ! $event->context['exception'] instanceof Exception;
     }
+
+    /**
+     * Determine if the event should be emailed.
+     *
+     * @param  mixed  $exception
+     * @return bool
+     */
+    private function shouldEmail($exception)
+    {
+        return filter_var(config('telescope.email_on_exception'), FILTER_VALIDATE_BOOLEAN);
+    }
 }
