@@ -7,6 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Laravel\Telescope\IncomingExceptionEntry;
 
 class TelescopeException extends Mailable
 {
@@ -19,7 +20,7 @@ class TelescopeException extends Mailable
      *
      * @return void
      */
-    public function __construct(Exception $exception)
+    public function __construct(IncomingExceptionEntry $exception)
     {
         $this->exception = $exception;
     }

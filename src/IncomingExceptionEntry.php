@@ -59,4 +59,14 @@ class IncomingExceptionEntry extends IncomingEntry
     {
         return md5($this->content['file'].$this->content['line']);
     }
+    
+    /**
+     * Get the exception message. 
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->exception->message;
+    }
 }

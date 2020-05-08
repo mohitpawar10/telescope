@@ -1,36 +1,13 @@
-<?php
+@component('mail::message')
+# New exception occured, please take neccesary action.   
 
-namespace App\Mail;
+## Exception 
+{{ $exception->exception->getMessage() }}
 
-use Exception;
-use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
+@component('mail::button', ['url' => url('/') . "/" . config('telescope.path') . "/exceptions/" . $exception->uuid])
+Details
+@endcomponent
 
-class TelescopeException extends Mailable
-{
-    use Queueable, SerializesModels;
-
-    public $exception;
-
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(Exception $exception)
-    {
-        $this->exception = $exception;
-    }
-
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->markdown('exception.telescope');
-    }
-}
+Thanks,<br>
+{{ config('app.name') }}
+@endcomponent
