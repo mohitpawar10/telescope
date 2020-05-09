@@ -77,6 +77,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Telescope Email On Exception Receiver List
+    |--------------------------------------------------------------------------
+    |
+    | This option should be used when we want to send exception emails to the
+    | email addresses given in the list.
+    |
+    */
+
+    'send_exception_email_to' => env('TELESCOPE_SEND_EXCEPTION_EMAIL_TO', null),
+
+    /*
+    |--------------------------------------------------------------------------
     | Telescope Route Middleware
     |--------------------------------------------------------------------------
     |
